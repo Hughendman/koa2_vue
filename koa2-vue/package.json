@@ -21,6 +21,7 @@
     "koa-views": "^5.2.1",
     "koa2-cors": "^2.0.5",
     "log4js": "^0.6.38",
+    "mysql": "^2.15.0",
     "pug": "^2.0.0-rc.1"
   },
   "devDependencies": {
