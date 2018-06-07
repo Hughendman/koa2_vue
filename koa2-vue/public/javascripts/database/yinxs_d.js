@@ -2,11 +2,11 @@ const mysql = require('mysql');
 const config = require('../../config/database');
 
 const pool  = mysql.createPool({
-    host     : config.CommonMDM.database.HOST,
-    user     : config.CommonMDM.database.USERNAME,
-    password : config.CommonMDM.database.PASSWORD,
-    database : config.CommonMDM.database.DATABASE,
-    port     : config.CommonMDM.database.PORT
+    host     : config.yinxs_a.database.HOST,
+    user     : config.yinxs_a.database.USERNAME,
+    password : config.yinxs_a.database.PASSWORD,
+    database : config.yinxs_a.database.DATABASE,
+    port     : config.yinxs_a.database.PORT
 });
 
 let query = ( sql, values ) => {
@@ -31,20 +31,17 @@ let query = ( sql, values ) => {
 
 };
 
-//获取二级城市表
 let test_a = () => {
     let _sql = `这里填入sql语句`;
     return query( _sql );
 };
 
-//获取城市商圈
 let test_b = (id) => {
     let _sql = `这里填入sql语句`;
     return query( _sql );
 };
 
 
-//获取BW下的cityId
 let test_c = (id) => {
     let _sql = `这里填入sql语句`;
     return query( _sql );
