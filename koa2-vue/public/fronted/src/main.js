@@ -4,7 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+//引入全局的css
+import '../static/css/global.css';
+
+//引入elementUI框架
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+
+//引入axios
+import axios from 'axios';
+Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
 new Vue({
@@ -12,4 +24,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});

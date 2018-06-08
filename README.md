@@ -12,6 +12,61 @@
 * 前端开发：cd koa2-vue/public/fronted 执行npm i 下载完成后执行 npm run dev
 * 访问：http://127.0.0.1:8080
 
+### 前端构架已经解决：
+#### 2018/6/8
+* 引入全局css样式 (static/css/global.css)
+* 引入elementUI框架
+* 引入axios
+```
+// get方式
+this.$http.get('/user?name=yinxs')
+  .then( (response) => {
+    console.log(response);
+  })
+  .catch( (error) => {
+    console.log(error);
+  });
+
+// get方式第二种
+this.$http.get('/user', {
+    params: {
+      name: 'yinxs'
+    }
+  })
+  .then( (response) => {
+    console.log(response);
+  })
+  .catch( (error) => {
+    console.log(error);
+  });
+
+//post 方法
+this.$http.post('/user', {
+    firstName: 'Xuesong',
+    lastName: 'Yin'
+  })
+  .then( (response) => {
+    console.log(response);
+  })
+  .catch( (error) => {
+    console.log(error);
+  });
+
+//执行多个并发请求
+ getUser => () {
+  return this.$http.get('/tj/user/12345');
+}
+
+ getApp => () {
+  return axios.get('/tj/app/123');
+}
+
+this.$http.all([getUser(), getApp()])
+  .then(this.$http.spread( (res1, res2) => {
+    // 两个请求现在都执行完成
+  }));
+```
+
 ### 后端构架已经解决：
 #### 2018/6/7
 * 跨域问题 （"koa2-cors": "^2.0.5"）
